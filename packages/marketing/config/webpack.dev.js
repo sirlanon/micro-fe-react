@@ -1,6 +1,5 @@
 const { merge } = require('webpack-merge')
 // webpack-merge is a utility library which merges the configs
-const HtmlWebpackPlugin = require('html-webpack-plugin')
 const ModuleFederationPlugin = require('webpack/lib/container/ModuleFederationPlugin')
 
 const packageJson = require('../package.json')
@@ -22,9 +21,6 @@ const devConfig = {
                 './MarketingApp': './src/bootstrap.js',
             },
             shared: packageJson.dependencies
-        }),
-        new HtmlWebpackPlugin({
-            template: './public/index.html'
         })
     ]
 }
